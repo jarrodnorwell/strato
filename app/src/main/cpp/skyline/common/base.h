@@ -3,6 +3,7 @@
 
 #pragma once
 
+#include <cassert>
 #include <cstdint>
 #include <variant>
 
@@ -30,8 +31,6 @@ namespace skyline {
         constexpr size_t AddressSpaceSize{1ULL << 39}; //!< The size of the host CPU AS in bytes
         constexpr size_t PageSize{0x1000}; //!< The size of a host page
         constexpr size_t PageSizeBits{12}; //!< log2(PageSize)
-
-        static_assert(PageSize == PAGE_SIZE);
     }
 
     /**

@@ -23,7 +23,7 @@ namespace skyline::gpu::interconnect {
                                                          vk::PipelineStageFlagBits dstStage,
                                                          vk::PipelineStageFlags &srcStageMask, vk::PipelineStageFlags &dstStageMask) {
         if (!view) // Return a dummy buffer if the constant buffer isn't bound
-            return BufferBinding{ctx.gpu.megaBufferAllocator.Allocate(ctx.executor.cycle, PAGE_SIZE).buffer, 0, PAGE_SIZE};
+            return BufferBinding{ctx.gpu.megaBufferAllocator.Allocate(ctx.executor.cycle, getpagesize()).buffer, 0, PAGE_SIZE};
 
         ctx.executor.AttachBuffer(view);
         view.GetBuffer()->PopulateReadBarrier(dstStage, srcStageMask, dstStageMask);

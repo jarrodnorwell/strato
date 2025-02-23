@@ -542,8 +542,8 @@ class EmulationActivity : AppCompatActivity(), SurfaceHolder.Callback, View.OnTo
     /**
      * Stop the currently executing ROM and replace it with the one specified in the new intent
      */
-    override fun onNewIntent(intent : Intent?) {
-        super.onNewIntent(intent!!)
+    override fun onNewIntent(@SuppressLint("UnsafeIntentLaunch") intent : Intent) {
+        super.onNewIntent(intent)
         if (getIntent().data != intent.data) {
             setIntent(intent)
             executeApplication(intent)
@@ -551,7 +551,8 @@ class EmulationActivity : AppCompatActivity(), SurfaceHolder.Callback, View.OnTo
     }
 
     override fun onUserLeaveHint() {
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.S && !isInPictureInPictureMode)
+        super.onUserLeaveHint()
+        if (!isInPictureInPictureMode)
             enterPictureInPictureMode(pictureInPictureParamsBuilder.build())
     }
 

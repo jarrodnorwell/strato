@@ -354,7 +354,7 @@ namespace skyline::gpu {
                 (state.os->privateAppFilesPath + "gpu_drivers/" + *state.settings->gpuDriver + "/").c_str(),
                 (*state.settings->gpuDriverLibraryName).c_str(),
                 (state.os->publicAppFilesPath + "gpu/vk_file_redirect/").c_str(),
-                mapping
+                (void**)mapping
             );
 
             if (!libvulkanHandle) {
@@ -372,7 +372,7 @@ namespace skyline::gpu {
                 nullptr,
                 nullptr,
                 (state.os->publicAppFilesPath + "gpu/vk_file_redirect/").c_str(),
-                mapping
+                (void**)mapping
             );
 
             if (!libvulkanHandle) {

@@ -43,9 +43,6 @@
 [submodule "Shader Compiler"]
 	path = app/libraries/shader-compiler
 	url = https://github.com/strato-emu/shader-compiler.git
-[submodule "libadrenotools"]
-	path = app/libraries/adrenotools
-	url = https://github.com/bylaws/libadrenotools/
 [submodule "app/libraries/robin-map"]
 	path = app/libraries/robin-map
 	url = https://github.com/Tessil/robin-map
@@ -58,3 +55,6 @@
 [submodule "app/libraries/audio-core"]
 	path = app/libraries/audio-core
 	url = https://github.com/skyline-emu/audio-core
+[submodule "app/libraries/libadrenotools"]
+	path = app/libraries/libadrenotools
+	url = https://github.com/bylaws/libadrenotools

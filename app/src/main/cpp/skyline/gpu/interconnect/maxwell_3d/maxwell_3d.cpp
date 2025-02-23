@@ -53,7 +53,7 @@ namespace skyline::gpu::interconnect::maxwell3d {
         vk::DeviceSize size{conversion::quads::GetRequiredBufferSize(count, sizeof(u32)) + offset};
 
         if (!quadConversionBuffer || quadConversionBuffer->size_bytes() < size) {
-            quadConversionBuffer = std::make_shared<memory::Buffer>(ctx.gpu.memory.AllocateBuffer(util::AlignUp(size, PAGE_SIZE)));
+            quadConversionBuffer = std::make_shared<memory::Buffer>(ctx.gpu.memory.AllocateBuffer(util::AlignUp(size, getpagesize())));
             conversion::quads::GenerateQuadListConversionBuffer(quadConversionBuffer->cast<u32>().data(), firstVertex + count);
             quadConversionBufferAttached = false;
         }

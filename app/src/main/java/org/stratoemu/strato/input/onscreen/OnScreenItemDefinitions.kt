@@ -15,7 +15,6 @@ import android.graphics.Typeface
 import android.os.SystemClock
 import androidx.core.content.res.use
 import androidx.core.graphics.minus
-import org.stratoemu.strato.R
 import org.stratoemu.strato.input.ButtonId
 import org.stratoemu.strato.input.ButtonId.*
 import org.stratoemu.strato.input.StickId
@@ -26,6 +25,11 @@ import org.stratoemu.strato.utils.add
 import org.stratoemu.strato.utils.multiply
 import kotlin.math.roundToInt
 import com.google.android.material.R as MaterialR
+import org.stratoemu.strato.R.drawable.ic_button
+import org.stratoemu.strato.R.drawable.ic_stick
+import org.stratoemu.strato.R.drawable.ic_rectangular_button
+import org.stratoemu.strato.R.drawable.ic_trigger_button_left
+import org.stratoemu.strato.R.drawable.ic_trigger_button_right
 
 open class CircularButton(
     onScreenControllerView : OnScreenControllerView,
@@ -33,7 +37,7 @@ open class CircularButton(
     defaultRelativeX : Float,
     defaultRelativeY : Float,
     defaultRelativeRadiusToX : Float,
-    drawableId : Int = R.drawable.ic_button,
+    drawableId : Int = ic_button,
     defaultEnabled : Boolean = true
 ) : OnScreenButton(
     onScreenControllerView,
@@ -65,9 +69,9 @@ open class JoystickButton(
     defaultRelativeX,
     defaultRelativeY,
     defaultRelativeRadiusToX,
-    R.drawable.ic_button
+    ic_button
 ) {
-    private val innerButton = CircularButton(onScreenControllerView, buttonId, config.relativeX, config.relativeY, defaultRelativeRadiusToX * 0.75f, R.drawable.ic_stick)
+    private val innerButton = CircularButton(onScreenControllerView, buttonId, config.relativeX, config.relativeY, defaultRelativeRadiusToX * 0.75f, ic_stick)
 
     open var recenterSticks = false
         set(value) {
@@ -275,7 +279,7 @@ open class RectangularButton(
     defaultRelativeY : Float,
     defaultRelativeWidth : Float,
     defaultRelativeHeight : Float,
-    drawableId : Int = R.drawable.ic_rectangular_button,
+    drawableId : Int = ic_rectangular_button,
     defaultEnabled : Boolean = true
 ) : OnScreenButton(
     onScreenControllerView,
@@ -305,9 +309,9 @@ class TriggerButton(
     defaultRelativeWidth,
     defaultRelativeHeight,
     when (buttonId) {
-        ZL -> R.drawable.ic_trigger_button_left
+        ZL -> ic_trigger_button_left
 
-        ZR -> R.drawable.ic_trigger_button_right
+        ZR -> ic_trigger_button_right
 
         else -> error("Unsupported trigger button")
     }

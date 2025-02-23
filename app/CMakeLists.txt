@@ -90,7 +90,7 @@ add_subdirectory("libraries/range")
 add_subdirectory("libraries/sirit")
 
 # libadrenotools
-add_subdirectory("libraries/adrenotools")
+add_subdirectory("libraries/libadrenotools")
 
 # Tessil Robin Map
 add_subdirectory("libraries/robin-map")

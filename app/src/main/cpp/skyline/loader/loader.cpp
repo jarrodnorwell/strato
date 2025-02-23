@@ -45,7 +45,7 @@ namespace skyline::loader {
         size_t hookSize{0};
         if (enableSymbolHooking && dynamicallyLinked) {
             executableSymbols = hle::GetExecutableSymbols(dynsym.cast<Elf64_Sym>(), dynstr);
-            hookSize = util::AlignUp(state.nce->GetHookSectionSize(executableSymbols), PAGE_SIZE);
+            hookSize = util::AlignUp(state.nce->GetHookSectionSize(executableSymbols), getpagesize());
         }
 
         // Reserve patch + hook size only if we need to patch
