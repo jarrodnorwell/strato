@@ -4,6 +4,7 @@ plugins {
     id 'kotlin-kapt'
     id 'idea'
     id 'com.google.dagger.hilt.android'
+    id 'org.jetbrains.kotlin.plugin.serialization' version '2.1.10'
 }
 
 idea.module {
@@ -58,10 +59,9 @@ android {
 
     buildTypes {
         release {
-            debuggable true
             externalNativeBuild {
                 cmake {
-                    arguments "-DCMAKE_BUILD_TYPE=RELEASE"
+                    arguments("-DCMAKE_BUILD_TYPE=RELEASE", "-DANDROID_SUPPORT_FLEXIBLE_PAGE_SIZES=ON")
                 }
             }
             minifyEnabled true
@@ -75,7 +75,7 @@ android {
             debuggable true
             externalNativeBuild {
                 cmake {
-                    arguments "-DCMAKE_BUILD_TYPE=RELWITHDEBINFO"
+                    arguments("-DCMAKE_BUILD_TYPE=RELWITHDEBINFO", "-DANDROID_SUPPORT_FLEXIBLE_PAGE_SIZES=ON")
                 }
             }
             minifyEnabled false

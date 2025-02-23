@@ -12,6 +12,7 @@ namespace skyline::service::friends {
         KHandle handle{state.process->InsertItem(completionEvent)};
         LOGD("Friend Completion Event Handle: 0x{:X}", handle);
 
+        completionEvent->Signal();
         response.copyHandles.push_back(handle);
         return {};
     }
