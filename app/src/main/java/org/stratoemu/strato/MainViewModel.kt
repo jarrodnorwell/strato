@@ -32,7 +32,7 @@ class MainViewModel @Inject constructor(@ApplicationContext context : Context, p
 
     private var state
         get() = _stateData.value
-        set(value) = _stateData.postValue(value)
+        set(value) = _stateData.postValue(value!!)
     private val _stateData = MutableLiveData<MainState>()
     val stateData : LiveData<MainState> = _stateData
 
