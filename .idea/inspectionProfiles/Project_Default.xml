@@ -21,7 +21,6 @@
     <inspection_tool class="AndroidLintSourceLockedOrientationActivity" enabled="true" level="ERROR" enabled_by_default="true" />
     <inspection_tool class="AndroidLintUnpackedNativeCode" enabled="true" level="WARNING" enabled_by_default="true" />
     <inspection_tool class="AndroidLintUnusedNavigation" enabled="true" level="ERROR" enabled_by_default="true" />
-    <inspection_tool class="AndroidLintUseCompatLoadingForDrawables" enabled="false" level="WARNING" enabled_by_default="false" />
     <inspection_tool class="AndroidLintViewTag" enabled="true" level="WARNING" enabled_by_default="true" />
     <inspection_tool class="AndroidLintWeekBasedYear" enabled="false" level="WARNING" enabled_by_default="false" />
     <inspection_tool class="AnnotationClass" enabled="true" level="WARNING" enabled_by_default="true" />
